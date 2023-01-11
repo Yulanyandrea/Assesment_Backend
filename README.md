@@ -46,6 +46,54 @@ https://backend.mega-app.com.co:8080/api/articles/search?docid=1020&hl=en#dayone
 ![port](https://user-images.githubusercontent.com/79812118/211707358-0b1c4a99-6812-491b-8412-5ed1f5880838.jpg)
 
 
+## The path 
+
+
+  - The path shows which is the directory the server will have to request. However, paths are used to identify any route in the navigational structure of the website
+
+
+
+![path](https://user-images.githubusercontent.com/79812118/211708060-afa98e3b-c654-4b04-a572-e8c3326024ef.jpg)
+
+## The query 
+
+  - " The question mark tell the browser that a query is being performed against a database where the data is stored." 
+ 
+ 
+ ![the query](https://user-images.githubusercontent.com/79812118/211709509-65c25b58-90e7-44bd-9267-361099c817b3.jpg)
+
+## The parameters
+
+
+  - The parameters are the values that are being queried  while someone performs a search
+
+![the parameters](https://user-images.githubusercontent.com/79812118/211709866-b171bd26-2b8f-4086-a5c0-fc31358cd432.jpg)
+
+
+
 ### Define what is a Web API, Restful and what are the statusCode 200-, 400-, 500-
 
+## Web Api 
+  - It is an API over the web which can be accessed using HTTP protocol. It can be built Web API using different technologies such as JavaScript
+
+## Resfull Api
+
+  - It is an interface that two different systems use to comunicate secure information over the internet 
+
+## status 200 (SUCCESSFUL RESPONSE)
+
+  - Succeeded request deppeding of the method GET,POST, PATCH , PUT , DELETE 
+
+## status 400 (CLIENT ERROR RESPONSE)
+
+  - bad request: the server could not process the request because of any invalid data 
+
+## status 500 (SERVER ERROR RESPONSE)
+
+
+  - Internal server error : the server found and error that it  cannot handle
+
 ### When we talk about CRUD, what does it mean?
+When someone build an API  the model should have funtionalities like create, read, update, and delete . A model must have the correct funtion in order to complete different actions. If an action cannot be described by one of these four operations, then it should potentially be a model of its own.
+
+
