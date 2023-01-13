@@ -1,6 +1,49 @@
 # Assesment_Backend
 
 
+### Documentation:
+
+The following project use a No SQL database in Moongo DB . The principal idea is that any user can create different favourite lists focus on their thoughts .
+Every list have the name of the person who create the list. 
+
+To run the program you need to write: 
+
+## npm run dev 
+
+After you will need a software similar to Postman to create users and favourite list. First, you need to create an user with the following endpoint:
+
+ http://localhost:3000/api/users
+
+Also, you need the following structure in the format JSON (method POST):
+
+{
+        "name":"xxxxx",
+        "email":"xxxxx",
+        "password":"xxxxx"
+    }
+On the other hand, to generate the token in order to have accessibility to delete,create or update any list you need to log in. Use the following format in the Method
+POST. 
+
+URL:  http://localhost:3000/auth/local/login
+
+{
+    "email":"XXX",
+    "password":"XXXX"
+}
+
+To create a favourite list you will need to introduce the token  Authorization "Bearer Token" in the following URL :  http://localhost:3000/api/favList
+
+{
+    "name":"Music",
+    "title":"Yula's music",
+    "description":"This is Yula's playlist.She listening to different gendre",
+    "link":"https://open.spotify.com/playlist/37i9dQZF1DXbGsT3lGmSyq",
+    "createdBy":"xxxxx"
+}
+
+createdBy needs the id of the logged in user . 
+
+
 ### Indicate which are the parts of the following url: 
 
 https://backend.mega-app.com.co:8080/api/articles/search?docid=1020&hl=en#dayone
