@@ -52,6 +52,48 @@ To create a favourite list you will need to introduce the token  Authorization "
 
 createdBy needs the id of the logged in user . 
 
+## Rememeber
+
+You will not avalible to update or delete users' list . Only yours will be manipulated 
+In case you want to update or delete your lists, you will need the token and introduce the fields that you want to update 
+
+Before
+
+```
+{
+        
+        "name": "Jonas hobbies :P",
+        "title": "My favourite hobbies",
+        "description": "I love watch movies",
+        "link": "xxxxxx",
+        "createdBy": "63d4182a8771f953d6866433",
+        "createdAt": "2023-01-27T21:52:03.948Z",
+        "updatedAt": "2023-01-27T21:52:03.948Z"
+    }
+    
+  ```
+
+
+After 
+
+```
+{
+        
+        "name": "Yula's hobbies",
+        "title": "My favourite hobbies",
+        "description": "I love watch movies",
+        "link": "OOOOOOO",
+        "createdBy": "63d4182a8771f953d6866433",
+        "createdAt": "2023-01-27T21:52:03.948Z",
+        "updatedAt": "2023-01-27T21:52:03.948Z"
+    }
+    
+  ```
+
+If yor want to delete put the method DELETE and introduce the id related with your list and  your token
+
+
+## Homework 
 
 ### Indicate which are the parts of the following url: 
 
