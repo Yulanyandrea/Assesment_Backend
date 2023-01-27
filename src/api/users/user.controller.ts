@@ -12,6 +12,21 @@ export async function handleGetAllUsers(req:Request,res:Response,next:NextFuncti
   }
 }
 
+export async function handleGetUser(req:Request,res:Response,next:NextFunction){
+  const {id}=req.params;
+  try {
+    const getUser=await getUserById(id);
+    if(!getUser){
+      return res.status(404).json({message:"User not found"})
+    }
+    return res.status(200).json(getUser.profile)
+
+  } catch (error) {
+   return res.status(500).json(error);
+
+  }
+}
+
 export async function handleCreateUser(req:Request,res:Response,next:NextFunction) {
   const data=req.body;
   try {

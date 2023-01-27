@@ -30,6 +30,11 @@ const UserSchema= new Schema({
     require:true,
     min:6,
   },
+  list:{
+    type: Schema.Types.ObjectId,
+    ref: 'Fav',
+  },
+
   passwordResetToken: String,
   passwordResetExpires: Date,
 }, {

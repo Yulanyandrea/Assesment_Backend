@@ -42,8 +42,8 @@ export async function Authenticated(req:AuthTypes,res:Response,next:NextFunction
       return res.status(401).json({message:'Unauthorize'})
     }
 
-
     const user= await getUser({ email: decode.email })
+
 
     if(!user){
       return res.status(401).json({message:'Unauthorized'})
@@ -55,3 +55,10 @@ export async function Authenticated(req:AuthTypes,res:Response,next:NextFunction
     return true
 }
 
+// export async function deletePermission(req:AuthTypes,res:Response,next:NextFunction) {
+//   const token =req.headers?.authorization?.split(' ')[1];
+//   const decode=verifyToken(token) as UserDocument
+//   const user= await getUser({ id: decode._id })
+//   // const list = await getFavById()
+//   console.log("hola",user)
+// }

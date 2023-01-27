@@ -11,7 +11,7 @@ export function createUser(user:DocumentDefinition<Omit<UserDocument,'createdAt'
 }
 
 export function getUser(filter:FilterQuery<UserDocument>){
-  const user= User.findOne(filter)
+  const user= User.findOne(filter).populate({ path: 'list', select: ' title ' })
   return user;
 
 }
