@@ -8,6 +8,8 @@ import { createFav,
 import { verifyToken } from '../../auth/auth.services';
 import { getUser } from '../users/user.services';
 import { UserDocument } from '../../api/users/user.model';
+import { AuthTypes } from '../../auth/auth.types';
+import Fav from './fav.model';
 
 export async function handleGetAllListFav(req:Request,res:Response,next:NextFunction) {
   try {
@@ -41,14 +43,22 @@ export async function handleCreateFavList(req:Request,res:Response,next:NextFunc
   }
 }
 
-export async function handleDeleteFavList(req:Request,res:Response,next:NextFunction) {
+export async function handleDeleteFavList(req:AuthTypes,res:Response,next:NextFunction) {
   const { id }=req.params;
+  const user= req.user
+
+  const query = {_id:id , createdBy:user._id}
+
+
+
   try {
-    const fav= await deleteFav(id)
+
+    const fav= await Fav.findOneAndDelete(query)
     if(!fav){
-      return res.status(404).json({message:'List not found'})
+      return res.status(401).json({message:'you are not allow'})
     }
     return res.status(200).json({message: 'Favourite list deleted'})
+
   } catch (error) {
     return res.status(500).json(error)
   }
@@ -66,7 +76,7 @@ export async function handleUpdateFavList(req:Request,res:Response,next:NextFunc
     const userObject = user1.toString();
 
 
-    if(data.createdBy._id=== userObject){
+    if(data.createdBy=== userObject){
       const favList = await updateFav(id,data);
       if(!favList){
         return res.status(404).json({message:'favourite list not found'})

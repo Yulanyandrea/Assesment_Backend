@@ -3,7 +3,8 @@ import { Request, Response, NextFunction } from 'express';
 import { getUser } from '../api/users/user.services';
 import { UserDocument } from '../api/users/user.model';
 import { AuthTypes, roles } from './auth.types';
-
+import { getAllFav  } from '../api/favourite/fav.services';
+import { FavDocument } from '../api/favourite/fav.model';
 
 
 //sign token
@@ -59,6 +60,19 @@ export async function Authenticated(req:AuthTypes,res:Response,next:NextFunction
 //   const token =req.headers?.authorization?.split(' ')[1];
 //   const decode=verifyToken(token) as UserDocument
 //   const user= await getUser({ id: decode._id })
-//   // const list = await getFavById()
+//   const list = await getAllFav()
+//   const list1= list.map(lists =>{
+//       const listFinal=lists.createdBy
+//       const listFinal_1=listFinal.toString()
+//       return listFinal_1
+//   })
+//   const userFinal= user._id.toString()
 //   console.log("hola",user)
+//   console.log('lista',list1[0])
+//   for (let i =0 ; i<list1.length;i++){
+//     if(list1[i]===userFinal){
+//       next()
+//     }
+//     res.status(401).json({message:'you are not allow to delete '})
+//   }
 // }
