@@ -16,14 +16,20 @@ After you will need a software similar to Postman to create users and favourite 
 
 Also, you need the following structure in the format JSON (method POST):
 
+```
 {
         "name":"xxxxx",
         "email":"xxxxx",
         "password":"xxxxx"
     }
+    
+    
+ ```
+    
 On the other hand, to generate the token in order to have accessibility to delete,create or update any list you need to log in. Use the following format in the Method
 POST. 
 
+```
 URL:  http://localhost:3000/auth/local/login
 
 {
@@ -31,8 +37,10 @@ URL:  http://localhost:3000/auth/local/login
     "password":"XXXX"
 }
 
-To create a favourite list you will need to introduce the token  Authorization "Bearer Token" in the following URL :  http://localhost:3000/api/favList
+```
 
+To create a favourite list you will need to introduce the token  Authorization "Bearer Token" in the following URL :  http://localhost:3000/api/favList
+```
 {
     "name":"Music",
     "title":"Yula's music",
@@ -40,6 +48,7 @@ To create a favourite list you will need to introduce the token  Authorization "
     "link":"https://open.spotify.com/playlist/37i9dQZF1DXbGsT3lGmSyq",
     "createdBy":"xxxxx"
 }
+```
 
 createdBy needs the id of the logged in user . 
 
